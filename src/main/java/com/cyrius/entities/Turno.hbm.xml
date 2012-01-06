@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+	<class name="com.cyrius.entities.Turno" table="TURNO" >
+		<cache usage="transactional"></cache>
+		<id name="id" column="ID_TURNO">
+			<generator class="identity"/>
+		</id>
+		<property name="arancelD" column="ARANCEL_DIF" type="java.lang.Boolean"/>
+		<property name="asistio" column="ASISTIO" type="java.lang.Boolean"/>
+		<property name="bono" column="BONO" type="java.lang.Boolean"/>
+		<many-to-one name="obraSocial" column="ID_OBRA_SOCIAL" class="com.cyrius.entities.ObraSocial"
+			not-found="exception" not-null="true"/>
+		<property name="hora" column="HORARIO" type="java.util.Date" not-null="true"/>
+		<many-to-one name="medico" column="ID_MEDICO" class="com.cyrius.entities.Medico" not-found="exception" not-null="true"/>
+		<many-to-one name="practica" column="ID_PRACTICA" class="com.cyrius.entities.Practica" not-found="exception" not-null="true"/>
+		<property name="monto" column="MONTO" type="java.lang.Double"/>
+		<property name="nroAfiliado" column="NRO_AFILIADO" type="java.lang.String"/>
+		<property name="observaciones" column="OBSERVACIONES" type="text" />
+		<many-to-one name="paciente" column="ID_PERSONA" class="com.cyrius.entities.Persona"
+			not-null="true" not-found="exception"/>
+		<property name="realizado" column="realizado" type="java.lang.Boolean"/>
+		<property name="firmaPlanilla" column="firmaPlanilla" type="java.lang.Boolean"/>
+	</class>
+	<sql-query name="listaFacturacion">
+		SELECT OS.DESCRIPCION AS OBRASOCIAL, os.codigo as codigo_os,
+		 P.DESCRIPTION AS PRACTICA, pnn.codigo as codig_no_nomenclada, pn.codigo as codigo_nomenclada, COUNT(P.DESCRIPTION) AS CANTIDAD
+		FROM TURNO T
+        left JOIN OBRASOCIAL OS
+        ON T.ID_OBRA_SOCIAL = OS.ID
+        left JOIN PRACTICA P
+        ON T.ID_PRACTICA = P.ID_PRACTICA
+        left join conf_practica_no_nom_os pnn
+        on pnn.id_practica = p.id_practica and pnn.obrasocial = os.id
+        left join practica_nomenclada pn
+        on pn.id_practica = p.id_practica
+        WHERE OS.ID in (:idObraSocial) and t.id_medico in (:idMedico) and t.horario between :desde and :hasta and firmaPlanilla = false
+		GROUP BY OS.DESCRIPCION, P.DESCRIPTION, os.codigo, pnn.codigo,pn.codigo
+	</sql-query>
+</hibernate-mapping>
+<!-- parsed in 0ms -->
