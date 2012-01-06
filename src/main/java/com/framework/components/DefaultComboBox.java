@@ -72,7 +72,7 @@
 /*     */   public void setValues(Collection values) {
 /*  93 */     this.values = values;
 /*  94 */     if (this.withNullElement) {
-/*  95 */       this.values = CollectionUtils.union(CollectionFactory.createCollectionWith(null), values);
+/*  95 */       this.values = CollectionUtils.union(CollectionFactory.createCollectionWith(""), values);
 /*     */     }
 /*  97 */     if (values != null)
 /*  98 */       super.setModel(new DefaultComboBoxModel(this.values.toArray()));

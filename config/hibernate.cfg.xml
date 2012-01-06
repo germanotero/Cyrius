@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory>
+
+		<!-- Database connection settings -->
+		<property name="connection.driver_class">
+			org.postgresql.Driver
+		</property>
+		<property name="connection.url">
+			jdbc:postgresql://localhost:5432/cyrius
+		</property>
+		<property name="default_schema">cyrius</property>
+		<property name="connection.username">postgres</property>
+		<property name="connection.password"></property>
+
+		<!-- JDBC connection pool (use the built-in) -->
+		<property name="connection.pool_size">20</property>
+
+		<!-- SQL dialect -->
+		<property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+
+		<!-- Enable Hibernate's automatic session context management -->
+		<property name="current_session_context_class">com.framework.persistence.CyriusSessionContext</property>
+
+		<!-- second-level cache  -->
+		<property name="cache.provider_class">org.hibernate.cache.HashtableCacheProvider</property>
+		<property name="hibernate.cache.use_query_cache">true</property>
+				
+		<!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">false</property>
+
+		<property name="transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
+
+		<!-- Drop and re-create the database schema on startup -->
+		<!--property name="hbm2ddl.auto">create-drop</property-->
+
+		<mapping resource="com/cyrius/entities/ObraSocial.hbm.xml" />
+		<mapping resource="com/cyrius/entities/HorarioSemanal.hbm.xml" />
+		<mapping resource="com/cyrius/entities/Practica.hbm.xml" />
+		<mapping resource="com/cyrius/entities/Persona.hbm.xml" />
+		<mapping resource="com/cyrius/entities/Preparacion.hbm.xml" />
+		<mapping resource="com/cyrius/entities/Recordatorio.hbm.xml" />
+		<mapping resource="com/cyrius/informes/Informe.hbm.xml" />
+		
+		<mapping
+			resource="com/cyrius/entities/ConfiguracionPracticaNoNomencladaObraSocial.hbm.xml" />
+		<mapping resource="com/cyrius/entities/TipoDocumento.hbm.xml" />
+		<mapping resource="com/cyrius/entities/Turno.hbm.xml" />
+
+		<mapping
+			resource="com/framework/dynamicForms/entities/DynamicForm.hbm.xml" />
+		<mapping
+			resource="com/framework/dynamicForms/entities/SimpleDynamicFormElement.hbm.xml" />
+		<mapping
+			resource="com/framework/dynamicForms/entities/ComboItem.hbm.xml" />
+
+	</session-factory>
+
+</hibernate-configuration>

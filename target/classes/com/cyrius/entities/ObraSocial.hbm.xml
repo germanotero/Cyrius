@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.cyrius.entities.ObraSocial" table="OBRASOCIAL">
+		<id name="id">
+			<generator class="identity"/>
+		</id>
+		<property name="codigo" unique="true"/>
+		<property name="descripcion" />
+		<property name="galCosto" />
+		<property name="galHono" />
+		<property name="arancel" />
+	</class>
+
+</hibernate-mapping>
+<!-- parsed in 0ms -->

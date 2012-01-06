@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class
+		name="com.framework.dynamicForms.entities.SimpleDynamicFormElement"
+		table="SIMPLE_DYNAMIC_FORM_ELEMENT">
+		<id name="id">
+			<generator class="identity" />
+		</id>
+		<property name="tipoFormElementName" />
+		<property name="description" />
+		<property name="name" />
+	</class>
+
+	<joined-subclass
+		name="com.framework.dynamicForms.entities.ComboElement"
+		table="COMBO_ELEMENT"
+		extends="com.framework.dynamicForms.entities.SimpleDynamicFormElement">
+		<key column="id" update="false" not-null="true"/>
+		
+		<bag name="opciones" lazy="false" cascade="all,delete-orphan" order-by="name">
+			<key column="ID_COMBO_ELEMENT" not-null="true"/>
+			<one-to-many class="com.framework.dynamicForms.entities.ComboItem" not-found="exception"/>
+		</bag>
+		
+	</joined-subclass>
+
+</hibernate-mapping>
+<!-- parsed in 0ms -->
