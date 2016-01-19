@@ -16,7 +16,3 @@
 /*    */   }
 /*    */ }
 
-/* Location:           E:\cyrius.ultimo\cyrius\cyrius.jar
- * Qualified Name:     com.framework.components.models.PrintTabsModel
- * JD-Core Version:    0.6.0
- */

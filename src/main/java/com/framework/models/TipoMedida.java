@@ -4,6 +4,9 @@
 /*    */ {
 /*    */   private String descripcion;
 /*    */   private String simbolo;
+public TipoMedida() {
+	// TODO Auto-generated constructor stub
+}
 /*    */ 
 /*    */   public TipoMedida(String simbolo, String descripcion)
 /*    */   {

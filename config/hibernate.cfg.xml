@@ -15,7 +15,7 @@
 			jdbc:postgresql://localhost:5432/cyrius
 		</property>
 		<property name="default_schema">cyrius</property>
-		<property name="connection.username">postgres</property>
+		<property name="connection.username">cyrius</property>
 		<property name="connection.password"></property>
 
 		<!-- JDBC connection pool (use the built-in) -->

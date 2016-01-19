@@ -22,6 +22,11 @@
 /*     */   {
 /*  33 */     return this.emptyText;
 /*     */   }
+
+@Override
+	public String toString() {
+		return this.getName() + " " + this.getDescription();
+	}
 /*     */ 
 /*     */   public void setEmptyText(String emptyText) {
 /*  37 */     this.emptyText = emptyText;
