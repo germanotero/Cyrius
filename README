@@ -1,1 +1,16 @@
 Cyrius.
+
+======DB======
+Download command line utils
+```
+brew install libpq
+```
+Start db:
+```
+docker-compose up
+```
+
+restore backup from sql file
+```
+psql -h localhost -U cyrius cyrius < cyrius.bkp2
+```
