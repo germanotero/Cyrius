@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.framework.dynamicForms.entities.DynamicForm"
+		table="DYNAMIC_FORM" discriminator-value="FORM">
+		<id name="id">
+			<generator class="identity"/>
+		</id>
+		<property name="name"/>
+		<property name="description"/>
+		<property name="cantidadColumnas" column="CANTIDAD_COLUMNAS" type="java.lang.Integer"/>
+		<bag name="groupElements" table="REL_DYNAMIC_FORM_GROUP" lazy="false" order-by="orden">
+			<key>
+				<column name="ID_DYNAMIC_FORM"/>
+			</key>
+			<composite-element class="com.framework.dynamicForms.entities.RelacionGroup">
+				<many-to-one name="group" class="com.framework.dynamicForms.entities.DynamicGroupElement" column="ID_DYNAMIC_GROUP" not-null="true" not-found="exception"/> 
+				<property name="order" type="java.lang.Integer" column="ORDEN" not-null="true" />
+				<property name="imprimeReducido" type="java.lang.Boolean" column="IMPRIME_REDUCIDO" not-null="true" />
+			</composite-element>
+		</bag>
+		<bag name="simpleElements" table="REL_DYNAMIC_FORM_ELEMENTS" lazy="false">
+			<key>
+				<column name="ID_DYNAMIC_FORM"/>
+			</key>
+			<many-to-many
+				class="com.framework.dynamicForms.entities.SimpleDynamicFormElement"
+				column="ID_SIMPLE_FORM_ELEMENT"/>
+		</bag>
+		
+		<joined-subclass
+			name="com.framework.dynamicForms.entities.DynamicGroupElement"
+			table="DYNAMIC_GROUP_ELEMENT"
+			extends="com.framework.dynamicForms.entities.DynamicForm">
+			<key column="id" update="false"/>
+			<property name="multiplicable" type="yes_no"/>
+			<property name="emptyText" column="EMPTY_TEXT" type="java.lang.String" length="50"/>
+		</joined-subclass>
+		
+	</class>
+
+</hibernate-mapping>
+<!-- parsed in 0ms -->

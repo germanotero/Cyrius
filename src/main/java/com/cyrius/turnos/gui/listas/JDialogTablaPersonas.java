@@ -3,6 +3,7 @@
 /*     */ import com.cyrius.entities.Persona;
 /*     */ import com.cyrius.entities.TipoDocumento;
 /*     */ import com.cyrius.searchers.BuscadorPersona;
+import com.framework.utils.StringUtils;
 /*     */ import java.awt.BorderLayout;
 /*     */ import java.awt.Container;
 /*     */ import java.awt.Dimension;
@@ -13,10 +14,10 @@
 /*     */ import java.awt.event.WindowEvent;
 /*     */ import java.util.Collection;
 /*     */ import java.util.Iterator;
-/*     */ import javax.swing.JDialog;
-/*     */ import javax.swing.JPanel;
-/*     */ import javax.swing.JScrollPane;
-/*     */ import javax.swing.JTable;
+/*     */ import javax.swing.*;
+/*     */
+/*     */
+/*     */
 /*     */ import javax.swing.table.DefaultTableModel;
 /*     */ import javax.swing.table.TableColumn;
 /*     */ import javax.swing.table.TableColumnModel;
@@ -34,8 +35,10 @@
 /*     */   private JTable jTable1;
 /*     */   private TablaPersonasSelectionAction action;
 /*     */ 
-/*     */   public JDialogTablaPersonas(short estado, TablaPersonasSelectionAction action, String nombre, String apellido)
+/*     */   public JDialogTablaPersonas(short estado, TablaPersonasSelectionAction action, String nombre, String apellido,
+                                        JFrame frame)
 /*     */   {
+              super(frame);
 /*  44 */     this.action = action;
 /*  45 */     this.estado = estado;
 /*  46 */     initComponents(nombre, apellido);
@@ -61,9 +64,11 @@
 /*  66 */     while (it.hasNext()) {
 /*  67 */       Persona pac = (Persona)it.next();
 /*  68 */       mat[i][0] = pac;
-/*  69 */       mat[i][1] = 
-/*  70 */         (pac.getTipoDocumento().getDescripcion() + ": " + 
-/*  70 */         pac.getDocumento());
+                if (pac.getTipoDocumento() != null && pac.getDocumento() != null) {
+/*  69 */           mat[i][1] =
+/*  70 */               (pac.getTipoDocumento().getDescripcion() + ": " +
+/*  70 */               pac.getDocumento());
+                }
 /*  71 */       mat[i][2] = pac.getCalle();
 /*  72 */       mat[i][3] = pac.getNumero();
 /*  73 */       mat[i][4] = pac.getCiudad();

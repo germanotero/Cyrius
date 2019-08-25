@@ -1,3 +1,0 @@
-17:41:20 ERROR com.framework.utils.StringProvider:32 : Finalizo: no se encontro la  key: buscarEstudiosUseCaseFactory$1.com.cyrius.informes.ui.uc.BuscarEstudiosModel
-17:41:23 ERROR com.framework.utils.StringProvider:32 : Finalizo: no se encontro la  key: verEstudiosPersonaUseCaseFactory$1.com.cyrius.informes.models.VerEstudiosPersonaModel
-17:41:26 ERROR com.framework.utils.StringProvider:32 : Finalizo: no se encontro la  key: sendByEmailUseCaseFactory$1.com.cyrius.informes.ui.uc.EmailModel

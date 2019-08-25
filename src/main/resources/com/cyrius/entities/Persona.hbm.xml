@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.cyrius.entities">
+	<class name="Persona" table="persona">
+		<id name="id">
+			<generator class="identity" />
+		</id>
+
+		<property name="documento" />
+		<property name="telefono" />
+		<property name="nombre" />
+		<property name="apellido" />
+		<property name="calle" />
+		<property name="numero" />
+		<property name="ciudad" />
+		<property name="historiaClinica" column="historia_clinica" type="text" />
+		<many-to-one name="tipoDocumento" />
+
+		<joined-subclass name="Medico"
+			table="MEDICOS">
+			<key column="id" update="false" />
+			<property name="matricula" />
+			<property name="telCel" />
+			<bag name="obrasSociales" table="MEDICO_OBRASOCIAL" fetch="select" access="field" lazy="false">
+				<key column="id"  />
+				<many-to-many class="ObraSocial"  />
+			</bag>
+			<bag name="horarios" lazy="false" cascade="all">
+				<key column="idMedico" />
+				<one-to-many class="HorarioSemanal"/>
+			</bag>
+		</joined-subclass>
+	</class>
+
+</hibernate-mapping>
+<!-- parsed in 16ms -->

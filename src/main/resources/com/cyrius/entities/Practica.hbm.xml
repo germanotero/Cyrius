@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.cyrius.entities.Practica" table="PRACTICA" abstract="true">
+		<id name="id" column="ID_PRACTICA">
+			<generator class="identity"/>
+		</id>
+		<property name="description" />
+		<many-to-one name="preparacion" />
+		
+		<bag name="estudios" table="PRACTICA_ESTUDIOS">
+			<key column="ID_PRACTICA" />
+			<many-to-many column="ID_ESTUDIO" class="com.framework.dynamicForms.entities.DynamicForm" />
+		</bag>
+		
+		<bag name="medicos" table="PRACTICA_MEDICO" >
+			<key column="ID_PRACTICA" />
+			<many-to-many column="ID_MEDICO" class="com.cyrius.entities.Medico" />
+		</bag>
+
+		<joined-subclass name="com.cyrius.entities.PracticaNoNomenclada" table="PRACTICA_NO_NOMENCLADA" >
+			<key column="ID_PRACTICA" update="false"/>
+			<bag name="relacionObraSocialCodigoCosto" table="OBRA_COD_COSTO" cascade="all,delete-orphan">
+				<key column="ID_PRACTICA" not-null="true"/>
+				<one-to-many class="com.cyrius.entities.ConfiguracionPracticaNoNomencladaObraSocial" />
+			</bag>
+		</joined-subclass>
+
+		<joined-subclass name="com.cyrius.entities.PracticaNomenclada"
+			table="PRACTICA_NOMENCLADA">
+			<key column="ID_PRACTICA" update="false"/>
+			<property name="codigo" />
+			<property name="cantGalenosCosto" />
+			<property name="cantGalenosHonorario" />
+		</joined-subclass>
+	</class>
+</hibernate-mapping>
+<!-- parsed in 16ms -->

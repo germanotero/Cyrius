@@ -342,7 +342,7 @@
 /*     */ 
 /*     */   private void buscar(String nombre, String apellido) {
 /* 385 */     new JDialogTablaPersonas((short) 0, new SelectPersonaAction(), nombre, 
-/* 386 */       apellido).setVisible(true);
+/* 386 */       apellido, this.parent).setVisible(true);
 /*     */   }
 /*     */ 
 /*     */   private void btnImprimirTurnoPrepaActionPerformed(ActionEvent evt)
