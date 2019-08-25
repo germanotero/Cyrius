@@ -6,7 +6,7 @@
 /*    */ 
 /*  6 */   private HoraMinuto finTurnoManana = new HoraMinuto(Integer.valueOf(13), Integer.valueOf(0));
 /*    */ 
-/*  8 */   private HoraMinuto inicioTurnoTarde = new HoraMinuto(Integer.valueOf(14), Integer.valueOf(0));
+/*  8 */   private HoraMinuto inicioTurnoTarde = new HoraMinuto(Integer.valueOf(13), Integer.valueOf(0));
 /*    */ 
 /* 10 */   private HoraMinuto finTurnoTarde = new HoraMinuto(Integer.valueOf(19), Integer.valueOf(30));
 /*    */ 
