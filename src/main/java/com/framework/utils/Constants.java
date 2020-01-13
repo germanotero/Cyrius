@@ -22,11 +22,11 @@
 /*    */ 
 /* 44 */   public static final Color BACK_MENU_BAR = new Color(210, 200, 210);
 /*    */ 
-/* 46 */   public static final Font FONTPRINT = new Font("Serif", 0, 10);
+/* 46 */   public static final Font FONTPRINT = new Font("Serif", 0, 14);
 /*    */ 
-/* 48 */   public static final Font FONTPRINTTEXT = new Font("Serif", 0, 9);
+/* 48 */   public static final Font FONTPRINTTEXT = new Font("Serif", 0, 11);
 /*    */ 
-/* 50 */   public static final Font FONTLEYENDA = new Font("Serif", 0, 7);
+/* 50 */   public static final Font FONTLEYENDA = new Font("Serif", 0, 11);
 /*    */ 
 /* 53 */   public static final BevelBorder BORDEDEFAULT = new BevelBorder(
 /* 54 */     0, null, null, null, null);

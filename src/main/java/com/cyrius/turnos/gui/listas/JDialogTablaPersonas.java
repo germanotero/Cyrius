@@ -35,13 +35,14 @@ import com.framework.utils.StringUtils;
 /*     */   private JTable jTable1;
 /*     */   private TablaPersonasSelectionAction action;
 /*     */ 
-/*     */   public JDialogTablaPersonas(short estado, TablaPersonasSelectionAction action, String nombre, String apellido,
+/*     */   public JDialogTablaPersonas(short estado, TablaPersonasSelectionAction action,
+                                        String nombre, String apellido, String dni,
                                         JFrame frame)
 /*     */   {
               super(frame);
 /*  44 */     this.action = action;
 /*  45 */     this.estado = estado;
-/*  46 */     initComponents(nombre, apellido);
+/*  46 */     initComponents(nombre, apellido, dni);
 /*  47 */     initFrame();
 /*     */   }
 /*     */ 
@@ -53,9 +54,14 @@ import com.framework.utils.StringUtils;
 /*  55 */     setTitle("Nuevo Turno");
 /*     */   }
 /*     */ 
-/*     */   private Object[][] getMatrix(String nombre, String apellido) {
-/*  59 */     Collection v = BuscadorPersona.getInstance().findByNombreApellido(
-/*  60 */       nombre, apellido);
+/*     */   private Object[][] getMatrix(String nombre, String apellido, String dni) {
+/*  59 */     Collection v;
+                if(StringUtils.isNotEmpty(dni)) {
+                    v = BuscadorPersona.getInstance().findByDni(dni);
+                } else {
+                    v = BuscadorPersona.getInstance().findByNombreApellido(
+                        nombre, apellido);
+                }
 /*     */ 
 /*  62 */     Object[][] mat = new Object[v.size()][6];
 /*  63 */     Iterator it = v.iterator();
@@ -84,7 +90,7 @@ import com.framework.utils.StringUtils;
 /*  83 */     return mat;
 /*     */   }
 /*     */ 
-/*     */   private void initComponents(String nombre, String apellido) {
+/*     */   private void initComponents(String nombre, String apellido, String dni) {
 /*  87 */     this.PanelGral = new JPanel();
 /*  88 */     this.jScrollPane1 = new JScrollPane();
 /*  89 */     this.jTable1 = new JTable();
@@ -95,7 +101,7 @@ import com.framework.utils.StringUtils;
 /*     */     });
 /*  95 */     this.PanelGral.setLayout(new BorderLayout());
 /*  96 */     this.jTable1.setModel(
-/*  98 */       new DefaultTableModel(getMatrix(nombre, apellido), new String[] { "Nombre", 
+/*  98 */       new DefaultTableModel(getMatrix(nombre, apellido, dni), new String[] { "Nombre",
 /*  98 */       "Documento", "Calle", "Numero", "Ciudad", "Tel." }) {
 /*  99 */       boolean[] canEdit = new boolean[6];
 /*     */ 

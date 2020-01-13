@@ -23,7 +23,7 @@ import org.hibernate.criterion.Restrictions;
 /*     */ 
 /*  25 */   private boolean hasRestrictions = false;
 /*     */ 
-/*     */   public CriteriaBuilder(Session session, Class clazz, boolean multiple)
+/*     */   public CriteriaBuilder(Session session, Class<T> clazz, boolean multiple)
 /*     */   {
 /*  29 */     session.beginTransaction();
 /*  30 */     this.criteria = session.createCriteria(clazz);
@@ -36,7 +36,7 @@ import org.hibernate.criterion.Restrictions;
 /*  37 */     return this.criteria;
 /*     */   }
 /*     */ 
-/*     */   public <T> Object build()
+/*     */   public T build()
 /*     */   {
 /*     */     try {
 /*  43 */       this.session.beginTransaction();
@@ -53,7 +53,7 @@ import org.hibernate.criterion.Restrictions;
 /*  54 */         answer = null;
 /*     */       }
 /*  56 */       this.session.getTransaction().commit();
-/*  57 */       return answer;
+/*  57 */       return (T) answer;
 /*     */     } catch (ShowableExceptionImpl ex) {
 /*  59 */       throw ex;
 /*     */     } catch (RuntimeException ex) {

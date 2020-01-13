@@ -4,25 +4,21 @@ import com.cyrius.entities.Persona;
 import com.cyrius.entities.Turno;
 import com.cyrius.searchers.BuscadorPersona;
 import com.cyrius.searchers.BuscadorTurnos;
+import com.google.api.client.util.Lists;
 import org.apache.commons.lang.time.DateFormatUtils;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.util.Collection;
-import java.util.GregorianCalendar;
-import java.util.Iterator;
+import java.awt.event.*;
+import java.util.*;
+import java.util.List;
 
 public class JDialogTurnosPersona extends JDialog {
+    private static final String[] COLUMNS = new String[]{ "Fecha", "Médico", "O.S.", "Asistió?", "Observaciones"};
+    private static final String DATE_PATTERN = "dd-MM-yyyy HH:mm";
     public static short TRAER = 0;
-
     public static short VER = 1;
-
-    private int lengthName = 0;
     private short estado;
     private JPanel PanelGral;
     private JScrollPane jScrollPane1;
@@ -47,25 +43,17 @@ public class JDialogTurnosPersona extends JDialog {
     }
 
     private Object[][] getMatrix(Persona pac) {
-        Collection v = BuscadorTurnos.getInstance().findByPaciente(pac);
+        Collection<Turno> v = BuscadorTurnos.getInstance().findByPaciente(pac);
 
-        Object[][] mat = new Object[v.size()][6];
-        Iterator it = v.iterator();
+        Object[][] mat = new Object[v.size()][COLUMNS.length + 1];
         int i = 0;
 
-        while (it.hasNext()) {
-            Turno turno = (Turno) it.next();
-            mat[i][0] = pac;
-            mat[i][1] = DateFormatUtils.format(turno.getHora(), DateFormatUtils.ISO_DATETIME_FORMAT.getPattern());
-            mat[i][2] = turno.getMedico();
-            mat[i][3] = turno.getObraSocial().getCodigo();
-            mat[i][4] = turno.getAsistio();
-            mat[i][5] = turno.getObservaciones();
-
-            if (pac.toString().length() > this.lengthName) {
-                this.lengthName = pac.toString().length();
-            }
-
+        for (Turno turno: v) {
+            mat[i][0] = DateFormatUtils.format(turno.getHora(), DATE_PATTERN);
+            mat[i][1] = turno.getMedico();
+            mat[i][2] = turno.getObraSocial().getCodigo();
+            mat[i][3] = turno.getAsistio();
+            mat[i][4] = turno.getObservaciones();
             i++;
         }
 
@@ -82,36 +70,25 @@ public class JDialogTurnosPersona extends JDialog {
             }
         });
         this.PanelGral.setLayout(new BorderLayout());
-
+        this.jTable1.setAutoResizeMode(JTable.AUTO_RESIZE_LAST_COLUMN);
         this.jTable1.setModel(
-                new DefaultTableModel(getMatrix(persona), new String[]{"Nombre",
-                        "fecha", "Medico", "Cod Obra", "Asistió?", "Observaciones"}) {
+                new DefaultTableModel(getMatrix(persona), COLUMNS) {
                     boolean[] canEdit = new boolean[6];
-
                     public boolean isCellEditable(int rowIndex, int columnIndex) {
                         return this.canEdit[columnIndex];
                     }
                 });
-        this.jTable1.getColumnModel().getColumn(0).setMaxWidth(this.lengthName * 15);
-        this.jTable1.getColumnModel().getColumn(0).setPreferredWidth(this.lengthName * 8);
-        this.jTable1.getColumnModel().getColumn(0).setMinWidth(this.lengthName * 7);
+        this.jTable1.getColumnModel().getColumn(0).setMaxWidth(150);
+        this.jTable1.getColumnModel().getColumn(0).setPreferredWidth(150);
+        this.jTable1.getColumnModel().getColumn(1).setMaxWidth(150);
+        this.jTable1.getColumnModel().getColumn(1).setPreferredWidth(150);
+        this.jTable1.getColumnModel().getColumn(2).setMaxWidth(70);
+        this.jTable1.getColumnModel().getColumn(3).setMaxWidth(45);
         this.jTable1.getColumnModel().setColumnMargin(10);
         this.jTable1.setLayout(null);
-        this.jTable1.addMouseListener(new MouseListener() {
+        this.jTable1.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent arg0) {
                 JDialogTurnosPersona.this.mouseDoubleClick(arg0);
-            }
-
-            public void mouseEntered(MouseEvent arg0) {
-            }
-
-            public void mouseExited(MouseEvent arg0) {
-            }
-
-            public void mousePressed(MouseEvent arg0) {
-            }
-
-            public void mouseReleased(MouseEvent arg0) {
             }
         });
         this.jScrollPane1.setViewportView(this.jTable1);
