@@ -1,3 +1,6 @@
 /target/
 .DS_Store
 client_secret.json
+*.swp
+.idea
+

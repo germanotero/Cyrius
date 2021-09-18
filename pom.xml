@@ -53,5 +53,13 @@
 			<artifactId>google-oauth-client-jetty</artifactId>
 			<version>1.21.0</version>
 		</dependency>
+		<dependency>
+			<groupId>com.roufid.tutorials</groupId>
+			<artifactId>example-app</artifactId>
+			<version>1.0</version>
+		        <scope>system</scope>
+			<systemPath>${basedir}/lib/cyrius.jar</systemPath>
+		</dependency>
+
 	</dependencies>
 </project>

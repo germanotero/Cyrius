@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.cyrius.informes.Informe" table="INFORME">
+		<id name="id" column="ID_INFORME" type="java.lang.Long">
+			<generator class="identity"/>
+		</id>
+		<property name="fecha" column="FECHA_INICIO" not-null="true"
+			type="java.util.Date"/>
+		<property name="datosXML" column="XML" not-null="true" type="text"/>
+		<property name="nroProtocolo" column="numero_protocolo" not-null="true" type="java.math.BigInteger" access="field" unique="true"/>
+		
+		<many-to-one name="medicoRealizante" class="com.cyrius.entities.Medico"
+			not-null="true" not-found="exception" column="ID_MEDICO"/>
+		<many-to-one name="form"
+			class="com.framework.dynamicForms.entities.DynamicForm"
+			not-null="true" not-found="exception" column="ID_DYNAMIC_FORM"/>
+		<many-to-one name="turno" cascade="save-update" class="com.cyrius.entities.Turno" not-null="true"
+			not-found="exception" column="ID_TURNO"/>
+	</class>
+	
+	
+	<sql-query name="sq_numero_protocolo" cacheable="false" >
+		<return-scalar type="string" column="nextval"/> 
+			SELECT NEXTVAL('sq_nro_protocolo')
+	</sql-query>
+
+</hibernate-mapping>

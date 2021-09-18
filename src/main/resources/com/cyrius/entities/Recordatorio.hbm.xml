@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+	<class name="com.cyrius.entities.Recordatorio"
+		table="RECORDATORIO">
+		<id name="id">
+			<generator class="identity"/>
+		</id>
+		<property name="fecha" />
+
+
+		<property name="mensaje" />
+	</class>
+
+</hibernate-mapping>
+<!-- parsed in 0ms -->
