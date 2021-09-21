@@ -37,8 +37,7 @@ import javax.swing.border.BevelBorder;
 import javax.swing.border.SoftBevelBorder;
 import javax.swing.border.TitledBorder;
 
-public class PanelNuevoTurnoImpl extends JPanel
-        implements PanelNuevoTurno {
+public class PanelNuevoTurnoImpl extends JPanel implements PanelNuevoTurno {
     private JButton btnAceptarTurnoNuevo;
     private JButton btnBuscar;
     private JButton btnCancelarTurnoNuevo;
@@ -133,20 +132,16 @@ public class PanelNuevoTurnoImpl extends JPanel
         setLayout(null);
         setMinimumSize(new Dimension(800, 600));
         setPreferredSize(new Dimension(800, 600));
-        this.jTabbedPanelTurnos.setBorder(
-                new BevelBorder(1));
-        this.jTabbedPanelTurnos
-                .setTabLayoutPolicy(1);
+        this.jTabbedPanelTurnos.setBorder(new BevelBorder(1));
+        this.jTabbedPanelTurnos.setTabLayoutPolicy(1);
         this.fotoCyrius.setBounds(30, 200, 300, 330);
 
         this.jTabbedPanelTurnos.addTab("1° paso", this.panelPrimerPaso);
         this.jTabbedPanelTurnos.addTab("Horario", this.panelHorarios);
         this.jpDatosPaciente.setLayout(null);
-        this.jpDatosPaciente.setBorder(
-                new SoftBevelBorder(0));
+        this.jpDatosPaciente.setBorder(new SoftBevelBorder(0));
         this.jpDatosPersona.setLayout(null);
-        this.jpDatosPersona.setBorder(
-                new BevelBorder(0));
+        this.jpDatosPersona.setBorder(new BevelBorder(0));
         this.jpDatosPersona.add(this.txtNombre);
         this.txtNombre.setBounds(90, 20, 270, 20);
         this.txtNombre.addKeyListener(new KeyListener() {
@@ -211,8 +206,7 @@ public class PanelNuevoTurnoImpl extends JPanel
         this.lblTipo.setBounds(225, 70, 30, 16);
         this.jpDatosPersona.add(this.cbTipo);
         this.cbTipo.setBounds(260, 70, 100, 20);
-        this.cbTipo.setModel(
-                new DefaultComboBoxModel(TipoDocumentoSearcher.findAll().toArray()));
+        this.cbTipo.setModel(new DefaultComboBoxModel(TipoDocumentoSearcher.findAll().toArray()));
         this.lblTelefono.setText("Telefono");
         this.jpDatosPersona.add(this.lblTelefono);
         this.lblTelefono.setBounds(80, 130, 60, 16);
@@ -239,19 +233,16 @@ public class PanelNuevoTurnoImpl extends JPanel
         this.jpDatosPaciente.add(this.jpDatosPersona);
         this.jpDatosPersona.setBounds(20, 90, 390, 280);
         this.jpAux.setLayout(null);
-        this.jpAux.setBorder(
-                new BevelBorder(0));
+        this.jpAux.setBorder(new BevelBorder(0));
 
         this.panelPrimerPaso.setBounds(450, 10, 140, 24);
         this.jpDatosPaciente.add(this.jpAux);
         this.jpAux.setBounds(10, 10, 730, 40);
         this.jpDatosOs.setLayout(null);
-        this.jpDatosOs.setBorder(
-                new BevelBorder(0));
+        this.jpDatosOs.setBorder(new BevelBorder(0));
         this.lblTitulo.setHorizontalAlignment(0);
         this.lblTitulo.setText("   Obra Social   ");
-        this.lblTitulo.setBorder(
-                new BevelBorder(0));
+        this.lblTitulo.setBorder(new BevelBorder(0));
         this.jpDatosOs.add(this.lblTitulo);
         this.lblTitulo.setBounds(20, 10, 280, 20);
         this.lblNumeroAfiliado.setText("Numero de Afiliado");
@@ -274,56 +265,48 @@ public class PanelNuevoTurnoImpl extends JPanel
         this.jpDatosPaciente.add(this.jpBuscar);
         this.jpBuscar.setBounds(150, 390, 130, 40);
         this.jpObserbaciones.setLayout(null);
-        this.jpObserbaciones.setBorder(
-                new BevelBorder(0));
-        this.jScrollPane1.setBorder(
-                new TitledBorder("Observaciones"));
+        this.jpObserbaciones.setBorder(new BevelBorder(0));
+        this.jScrollPane1.setBorder(new TitledBorder("Observaciones"));
         this.jScrollPane1.setViewportView(this.txtObservaciones);
         this.jpObserbaciones.add(this.jScrollPane1);
         this.jScrollPane1.setBounds(10, 10, 300, 140);
         this.jpDatosPaciente.add(this.jpObserbaciones);
         this.jpObserbaciones.setBounds(420, 290, 320, 160);
         this.jpConsultorio.setLayout(null);
-        this.jpConsultorio.setBorder(
-                new BevelBorder(0));
+        this.jpConsultorio.setBorder(new BevelBorder(0));
         this.jLabel1.setText("Consultorio");
         this.jpConsultorio.add(this.jLabel1);
         this.jLabel1.setBounds(10, 20, 75, 16);
         this.jpConsultorio.add(this.cbConsultorio);
         this.cbConsultorio.setBounds(90, 20, 210, 20);
-        this.cbConsultorio.setModel(
-                new DefaultComboBoxModel(new String[]{
-                        "Consultorio 1", "Consultorio 2"}));
+        this.cbConsultorio.setModel(new DefaultComboBoxModel(new String[] { "Consultorio 1", "Consultorio 2" }));
         this.jpDatosPaciente.add(this.jpConsultorio);
         this.jpConsultorio.setBounds(420, 220, 320, 60);
         this.jTabbedPanelTurnos.addTab("Datos del Paciente", this.jpDatosPaciente);
         add(this.jTabbedPanelTurnos);
         this.jTabbedPanelTurnos.setBounds(0, 0, 760, 490);
         this.btnAceptarTurnoNuevo.setText("Aceptar Turno");
-        this.btnAceptarTurnoNuevo
-                .addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent evt) {
-                        PanelNuevoTurnoImpl.this.btnAceptarTurnoNuevoActionPerformed(evt);
-                    }
-                });
+        this.btnAceptarTurnoNuevo.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                PanelNuevoTurnoImpl.this.btnAceptarTurnoNuevoActionPerformed(evt);
+            }
+        });
         add(this.btnAceptarTurnoNuevo);
         this.btnAceptarTurnoNuevo.setBounds(630, 490, 115, 26);
         this.btnImprimirTurnoPrepa.setText("Imprimir Turno y Preparación");
-        this.btnImprimirTurnoPrepa
-                .addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent evt) {
-                        PanelNuevoTurnoImpl.this.btnImprimirTurnoPrepaActionPerformed(evt);
-                    }
-                });
+        this.btnImprimirTurnoPrepa.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                PanelNuevoTurnoImpl.this.btnImprimirTurnoPrepaActionPerformed(evt);
+            }
+        });
         add(this.btnImprimirTurnoPrepa);
         this.btnImprimirTurnoPrepa.setBounds(100, 490, 220, 26);
         this.btnCancelarTurnoNuevo.setText("Cancelar");
-        this.btnCancelarTurnoNuevo
-                .addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent evt) {
-                        PanelNuevoTurnoImpl.this.btnCancelarTurnoNuevoActionPerformed(evt);
-                    }
-                });
+        this.btnCancelarTurnoNuevo.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                PanelNuevoTurnoImpl.this.btnCancelarTurnoNuevoActionPerformed(evt);
+            }
+        });
         add(this.btnCancelarTurnoNuevo);
         this.btnCancelarTurnoNuevo.setBounds(390, 490, 120, 26);
         this.jTabbedPanelTurnos.setEnabledAt(2, false);
@@ -335,24 +318,23 @@ public class PanelNuevoTurnoImpl extends JPanel
     }
 
     private void buscar(String nombre, String apellido, String dni) {
-        new JDialogTablaPersonas((short) 0, new SelectPersonaAction(), nombre,
-                apellido, dni, this.parent).setVisible(true);
+        new JDialogTablaPersonas((short) 0, new SelectPersonaAction(), nombre, apellido, dni, this.parent)
+                .setVisible(true);
     }
 
     private void btnImprimirTurnoPrepaActionPerformed(ActionEvent evt) {
-        if (this.panelHorarios.isSelected() && this.panelPrimerPaso != null && this.panelPrimerPaso.getSelectedMedico() != null) {
+        if (this.panelHorarios.isSelected() && this.panelPrimerPaso != null
+                && this.panelPrimerPaso.getSelectedMedico() != null) {
             GregorianCalendar hora = this.panelHorarios.getSelectedHour();
 
             TurnoPreparacion tp = null;
-            Preparacion pre = this.panelPrimerPaso.getSelectedPractica()
-                    .getPreparacion();
+            Preparacion pre = this.panelPrimerPaso.getSelectedPractica().getPreparacion();
 
             if (pre == null) {
                 pre = new Preparacion();
                 pre.setDescripcion("Sin Preparacion..");
             }
-            tp = new TurnoPreparacion(pre, hora,
-                    this.panelPrimerPaso.getSelectedPractica().getDescription(),
+            tp = new TurnoPreparacion(pre, hora, this.panelPrimerPaso.getSelectedPractica().getDescription(),
                     this.panelPrimerPaso.getSelectedMedico().toString());
 
             tp.setVisible(true);
@@ -361,21 +343,15 @@ public class PanelNuevoTurnoImpl extends JPanel
 
     private void btnAceptarTurnoNuevoActionPerformed(ActionEvent evt) {
         try {
-            NotFullFormException.validateNotEmpty("falta.nombre",
-                    this.txtNombre.getText());
-            NotFullFormException.validateNotEmpty("falta.apellido",
-                    this.txtApellido.getText());
-            NotFullFormException.validateNotNull(
-                    "falta.obraSocial.primer.paso",
+            NotFullFormException.validateNotEmpty("falta.nombre", this.txtNombre.getText());
+            NotFullFormException.validateNotEmpty("falta.apellido", this.txtApellido.getText());
+            NotFullFormException.validateNotNull("falta.obraSocial.primer.paso",
                     this.panelPrimerPaso.getSelectedObra());
-            NotFullFormException.validateNotNull("falta.medico.primer.paso",
-                    this.panelPrimerPaso.getSelectedMedico());
+            NotFullFormException.validateNotNull("falta.medico.primer.paso", this.panelPrimerPaso.getSelectedMedico());
             NotFullFormException.validateNotNull("falta.practica.primer.paso",
                     this.panelPrimerPaso.getSelectedPractica());
-            NotFullFormException.validateTrue("falta.horario",
-                    this.panelHorarios.isSelected());
-            validarNombre(this.txtNombre.getText().trim(),
-                    this.txtApellido.getText().trim());
+            NotFullFormException.validateTrue("falta.horario", this.panelHorarios.isSelected());
+            validarNombre(this.txtNombre.getText().trim(), this.txtApellido.getText().trim());
 
             if (this.persona == null)
                 this.persona = new Persona();
@@ -383,13 +359,11 @@ public class PanelNuevoTurnoImpl extends JPanel
             this.persona.setApellido(this.txtApellido.getText().trim());
 
             if (!this.txtDocumento.getText().trim().equals("")) {
-                this.persona
-                        .setDocumento(new Integer(this.txtDocumento.getText().trim()));
+                this.persona.setDocumento(new Integer(this.txtDocumento.getText().trim()));
             }
 
             if (this.cbTipo.getSelectedIndex() >= 0) {
-                this.persona.setTipoDocumento((TipoDocumento)
-                        this.cbTipo.getSelectedItem());
+                this.persona.setTipoDocumento((TipoDocumento) this.cbTipo.getSelectedItem());
             }
 
             if (!this.txtTelefono.getText().trim().equals("")) {
@@ -408,10 +382,10 @@ public class PanelNuevoTurnoImpl extends JPanel
                 this.persona.setCiudad(this.txtCiudad.getText().trim());
             }
 
-            if (BuscadorPersona.getInstance().existByDocumento(
-                    this.persona.getDocumento(), this.persona.getTipoDocumento())) ;
-            NotFullFormException.validateTrue("documento.existente",
-                    this.buscado);
+            if (BuscadorPersona.getInstance().existByDocumento(this.persona.getDocumento(),
+                    this.persona.getTipoDocumento())) {
+                NotFullFormException.validateTrue("documento.existente", this.buscado);
+            }
             completeInsert(this.persona);
             getFrameParent().setVisible(false);
             setVisible(false);
@@ -421,14 +395,10 @@ public class PanelNuevoTurnoImpl extends JPanel
     }
 
     private void validarNombre(String nombre, String apellido) {
-        if ((!this.buscado) &&
-                (BuscadorPersona.getInstance().existsByNombreApellido(nombre,
-                        apellido)))
-            if (JOptionPane.showConfirmDialog(null,
-                    "Existen personas con nombres similares, desea continuar",
+        if ((!this.buscado) && (BuscadorPersona.getInstance().existsByNombreApellido(nombre, apellido)))
+            if (JOptionPane.showConfirmDialog(null, "Existen personas con nombres similares, desea continuar",
                     "Validar nombres repetidos", 0) == 1)
-                throw new NotFullFormException(
-                        "Se encontraron personas con nombres similares");
+                throw new NotFullFormException("Se encontraron personas con nombres similares");
     }
 
     private void completeInsert(Persona pa) {
@@ -471,8 +441,7 @@ public class PanelNuevoTurnoImpl extends JPanel
 
             while (stk.hasMoreTokens()) {
                 String tok = stk.nextToken();
-                text = text + tok.substring(0, 1).toUpperCase() +
-                        tok.substring(1);
+                text = text + tok.substring(0, 1).toUpperCase() + tok.substring(1);
 
                 if (stk.hasMoreTokens()) {
                     text = text + " ";

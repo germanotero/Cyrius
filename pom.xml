@@ -1,21 +1,24 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.cyrius</groupId>
     <artifactId>cyrius-core</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>cyrius-core</name>
     <url>http://maven.apache.org</url>
-
-	<properties>
-		<jdk.version>1.7</jdk.version>
-	</properties>
+    <!--
+        mvn install:install-file -Dfile=lib/cyrius.jar -DgroupId=com.cyrius \
+    -DartifactId=cyrius-deps -Dversion=1.0 -Dpackaging=jar
+        -->
+    <!--
+       mvn install:install-file -Dfile=lib/kunststoff-2_0_2.jar -DgroupId=com.incors.plaf \
+   -DartifactId=kunststoff -Dversion=2.0.2 -Dpackaging=jar
+       -->
 
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>3.8.1</version>
+            <version>4.13.1</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -58,83 +61,23 @@
             <artifactId>google-oauth-client-jetty</artifactId>
             <version>1.21.0</version>
         </dependency>
-        <!--
-        mvn install:install-file -Dfile=lib/cyrius.jar -DgroupId=com.cyrius \
-    -DartifactId=cyrius-deps -Dversion=1.0 -Dpackaging=jar
-        -->
         <dependency>
-            <groupId>com.cyrius</groupId>
-            <artifactId>cyrius-deps</artifactId>
-            <version>1.0</version>
+            <groupId>com.incors.plaf</groupId>
+            <artifactId>kunststoff</artifactId>
+            <version>2.0.2</version>
         </dependency>
-        <!--
-       mvn install:install-file -Dfile=lib/kunststoff-2_0_2.jar -DgroupId=com.incors.plaf \
-   -DartifactId=kunststoff -Dversion=2.0.2 -Dpackaging=jar
-       -->
-=======
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.cyrius</groupId>
-	<artifactId>cyrius-core</artifactId>
-	<version>1.0-SNAPSHOT</version>
-	<name>cyrius-core</name>
-	<url>http://maven.apache.org</url>
-	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.13.1</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.itextpdf</groupId>
-			<artifactId>itextpdf</artifactId>
-			<version>5.0.6</version>
-		</dependency>
-		<dependency>
-			<groupId>javax.mail</groupId>
-			<artifactId>mail</artifactId>
-			<version>1.4</version>
-		</dependency>
-		<dependency>
-			<groupId>com.google.http-client</groupId>
-			<artifactId>google-http-client</artifactId>
-			<version>1.21.0</version>
-		</dependency>
-		<dependency>
-			<groupId>com.google.apis</groupId>
-			<artifactId>google-api-services-gmail</artifactId>
-			<version>v1-rev36-1.21.0</version>
-		</dependency>
-		<dependency>
-			<groupId>com.google.oauth-client</groupId>
-			<artifactId>google-oauth-client</artifactId>
-			<version>1.21.0</version>
-		</dependency>
-		<dependency>
-			<groupId>com.google.api-client</groupId>
-			<artifactId>google-api-client</artifactId>
-			<version>1.21.0</version>
-		</dependency>
-		<dependency>
-			<groupId>com.google.oauth-client</groupId>
-			<artifactId>google-oauth-client-java6</artifactId>
-			<version>1.21.0</version>
-		</dependency>
-		<dependency>
-			<groupId>com.google.oauth-client</groupId>
-			<artifactId>google-oauth-client-jetty</artifactId>
-			<version>1.21.0</version>
-		</dependency>
-		<dependency>
-			<groupId>com.incors.plaf</groupId>
-			<artifactId>kunststoff</artifactId>
-			<version>2.0.2</version>
-		</dependency>
 
     </dependencies>
     <build>
         <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>

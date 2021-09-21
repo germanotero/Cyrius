@@ -49,14 +49,11 @@ public class BuscadorPersona {
 
     public boolean existByDocumento(Integer nroDocumento, TipoDocumento tipoDocumento) {
         Session currentSession = PersistenceService.getInstance().getCurrentSession();
-        currentSession.beginTransaction();
         Criteria builder = currentSession.createCriteria(Persona.class);
         builder.add(Restrictions.eq("documento", nroDocumento));
         builder.add(Restrictions.eq("tipoDocumento", tipoDocumento));
         builder.setMaxResults(1);
-        boolean value = !builder.list().isEmpty();
-        currentSession.getTransaction().commit();
-        return value;
+        return !builder.list().isEmpty();
     }
 
     @SuppressWarnings("unchecked")
