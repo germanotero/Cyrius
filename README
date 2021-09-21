@@ -1,5 +1,15 @@
 Cyrius.
 
+Compile:
+Install old deps
+```
+mvn install:install-file -Dfile=lib/kunststoff-2_0_2.jar -DgroupId=com.incors.plaf \
+   -DartifactId=kunststoff -Dversion=2.0.2 -Dpackaging=jar
+
+
+mvn install:install-file -Dfile=lib/cyrius.jar -DgroupId=com.cyrius \
+    -DartifactId=cyrius-deps -Dversion=1.0 -Dpackaging=jar
+  ```
 ======DB======
 Download command line utils
 ```
