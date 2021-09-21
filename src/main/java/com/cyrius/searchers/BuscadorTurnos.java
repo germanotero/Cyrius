@@ -11,6 +11,7 @@ import com.framework.persistence.CriteriaBuilder;
 import com.framework.persistence.PersistenceService;
 import java.util.Calendar;
 import java.util.Collection;
+import java.util.List;
 
 public class BuscadorTurnos
 {
@@ -74,9 +75,9 @@ public class BuscadorTurnos
     return (Collection)builder.build();
   }
 
-   public Collection findByPaciente(Persona pac) {
-       CriteriaBuilder builder = PersistenceService.getInstance().criteriaBuilder(Turno.class);
+   public Collection<Turno> findByPaciente(Persona pac) {
+       CriteriaBuilder<Collection<Turno>> builder = PersistenceService.getInstance().criteriaBuilder(Turno.class);
        builder.addEquals("paciente", pac);
-       return (Collection)builder.build();
+       return builder.build();
    }
 }

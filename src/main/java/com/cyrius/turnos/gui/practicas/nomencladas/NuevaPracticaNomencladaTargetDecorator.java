@@ -17,8 +17,3 @@
 /* 16 */     return FormModelUtils.wrap(new PracticaNomenclada());
 /*    */   }
 /*    */ }
-
-/* Location:           E:\cyrius.ultimo\cyrius\cyrius.jar
- * Qualified Name:     com.cyrius.turnos.gui.practicas.nomencladas.NuevaPracticaNomencladaTargetDecorator
- * JD-Core Version:    0.6.0
- */

@@ -107,7 +107,7 @@
 /* 112 */     super.finalize();
 /*     */   }
 /*     */ 
-/*     */   public CriteriaBuilder<Collection> criteriaBuilder(Class criteriaClass) {
+/*     */   public <T> CriteriaBuilder<Collection<T>> criteriaBuilder(Class<T> criteriaClass) {
 /* 116 */     return new CriteriaBuilder(getCurrentSession(), criteriaClass, true);
 /*     */   }
 /*     */ 

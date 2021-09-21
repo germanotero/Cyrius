@@ -15,7 +15,7 @@
 /* 24 */     return instance;
 /*    */   }
 /*    */ 
-/*    */   public Collection findAll() {
+/*    */   public Collection<Medico> findAll() {
 /* 28 */     return PersistenceService.getInstance().loadAll(Medico.class);
 /*    */   }
 /*    */ 
