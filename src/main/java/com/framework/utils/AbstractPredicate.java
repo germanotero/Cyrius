@@ -1,6 +1,6 @@
 /*    */ package com.framework.utils;
 /*    */ 
-/*    */ import org.apache.commons.collections.Predicate;
+/*    */ import org.apache.commons.collections4.Predicate;
 /*    */ 
 /*    */ public abstract class AbstractPredicate
 /*    */   implements Predicate

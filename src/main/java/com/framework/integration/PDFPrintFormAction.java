@@ -7,8 +7,8 @@ import java.util.Iterator;
 
 import javax.mail.MessagingException;
 
-import org.apache.commons.collections.Predicate;
-import org.apache.commons.collections.functors.TruePredicate;
+import org.apache.commons.collections4.Predicate;
+import org.apache.commons.collections4.functors.TruePredicate;
 
 import com.cyrius.informes.ui.uc.EmailModel;
 import com.cyrius.services.SendMailService;

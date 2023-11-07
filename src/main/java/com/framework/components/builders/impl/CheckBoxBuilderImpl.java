@@ -4,8 +4,8 @@
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-import org.apache.commons.collections.Predicate;
-import org.apache.commons.collections.functors.FalsePredicate;
+import org.apache.commons.collections4.Predicate;
+import org.apache.commons.collections4.functors.FalsePredicate;
 
 
 import com.framework.components.FormCheckBox;

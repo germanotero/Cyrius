@@ -3,7 +3,7 @@
 /*    */ import com.framework.actions.FormDataComponent;
 /*    */ import com.framework.print.builder.PrintableElementsBuilder;
 /*    */ import javax.swing.JTextPane;
-/*    */ import org.apache.commons.collections.Predicate;
+/*    */ import org.apache.commons.collections4.Predicate;
 /*    */ 
 /*    */ public class TextBanner extends JTextPane
 /*    */   implements FormDataComponent

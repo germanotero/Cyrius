@@ -12,8 +12,8 @@
 /*     */ import javax.swing.JFormattedTextField.AbstractFormatter;
 /*     */ import javax.swing.JLabel;
 /*     */ import javax.swing.JPanel;
-/*     */ import org.apache.commons.collections.Predicate;
-/*     */ import org.apache.commons.collections.functors.FalsePredicate;
+/*     */ import org.apache.commons.collections4.Predicate;
+/*     */ import org.apache.commons.collections4.functors.FalsePredicate;
 /*     */ 
 /*     */ public abstract class PanelContainedFormInput extends JPanel
 /*     */   implements FormValueSelectionContainer, FormInput

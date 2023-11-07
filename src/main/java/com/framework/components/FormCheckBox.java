@@ -5,8 +5,8 @@
 /*     */ import com.framework.print.builder.PrintableElementsBuilder;
 /*     */ import com.framework.utils.StringProvider;
 /*     */ import javax.swing.JCheckBox;
-/*     */ import org.apache.commons.collections.Predicate;
-/*     */ import org.apache.commons.collections.functors.FalsePredicate;
+/*     */ import org.apache.commons.collections4.Predicate;
+/*     */ import org.apache.commons.collections4.functors.FalsePredicate;
 /*     */ 
 /*     */ public class FormCheckBox extends JCheckBox
 /*     */   implements FormModelContainer

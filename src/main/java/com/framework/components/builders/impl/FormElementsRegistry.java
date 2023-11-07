@@ -3,9 +3,9 @@
 /*    */ import com.framework.components.builders.interfaces.ElementsRegistry;
 /*    */ import com.framework.components.builders.interfaces.FormComponentBuilder;
 /*    */ import com.framework.utils.CollectionFactory;
-/*    */ import com.framework.utils.CollectionUtils;
+/*    */ import com.framework.utils.ExtraCollectionUtils;
 /*    */ import java.util.Collection;
-/*    */ import org.apache.commons.collections.Predicate;
+/*    */ import org.apache.commons.collections4.Predicate;
 /*    */ 
 /*    */ public class FormElementsRegistry
 /*    */   implements ElementsRegistry
@@ -13,11 +13,11 @@
 /* 15 */   private Collection<FormComponentBuilder> elements = CollectionFactory.createCollection(FormComponentBuilder.class);
 /*    */ 
 /*    */   public Collection getSimpleElements() {
-/* 18 */     return CollectionUtils.select(this.elements, new SimpleElementPredicate());
+/* 18 */     return ExtraCollectionUtils.select(this.elements, new SimpleElementPredicate());
 /*    */   }
 /*    */ 
 /*    */   public Collection getRowElements() {
-/* 22 */     return CollectionUtils.select(this.elements, new RowElementPredicate());
+/* 22 */     return ExtraCollectionUtils.select(this.elements, new RowElementPredicate());
 /*    */   }
 /*    */ 
 /*    */   public void add(FormComponentBuilder builder) {

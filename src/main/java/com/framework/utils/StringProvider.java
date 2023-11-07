@@ -36,7 +36,7 @@
 /*    */ 
 /*    */   private class I18nKeyTokenizer
 /*    */   {
-/* 65 */     private Collection keys ;
+/* 65 */     private Collection keys ; 
 /*    */ 
 /* 64 */     private int actual = 0;
 /*    */ 

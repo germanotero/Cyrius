@@ -4,7 +4,7 @@ import com.framework.components.FormComponent;
 import com.framework.components.RefreshableComponent;
 import com.framework.components.builders.impl.ConstraintsProvider;
 import com.framework.components.builders.impl.FormBuilder;
-import org.apache.commons.collections.Predicate;
+import org.apache.commons.collections4.Predicate;
 
 public abstract interface FormComponentBuilder
 {

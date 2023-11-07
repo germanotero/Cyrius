@@ -1,6 +1,6 @@
 /*   */ package com.framework.utils;
 /*   */ 
-/*   */ import org.apache.commons.collections.Transformer;
+/*   */ import org.apache.commons.collections4.Transformer;
 /*   */ 
 /*   */ public abstract class AbstractTransformer<T>
 /*   */   implements Transformer

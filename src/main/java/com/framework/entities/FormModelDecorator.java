@@ -4,13 +4,14 @@ import com.framework.models.DelegatingModel;
 import com.framework.models.FormModel;
 import com.framework.persistence.PersistibleObject;
 import com.framework.utils.ClassUtils;
-import com.framework.utils.CollectionUtils;
+import com.framework.utils.ExtraCollectionUtils;
 import com.framework.utils.MapFactory;
 import com.framework.utils.PropertyUtils;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.Map;
-import org.apache.commons.collections.Closure;
+import org.apache.commons.collections4.Closure;
+import org.apache.commons.collections4.CollectionUtils;
 
 public class FormModelDecorator implements FormModel {
 	private Object wrapped;

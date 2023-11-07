@@ -20,8 +20,8 @@
 /*     */ import javax.swing.table.TableCellEditor;
 /*     */ import javax.swing.table.TableColumn;
 /*     */ import javax.swing.table.TableColumnModel;
-/*     */ import org.apache.commons.collections.Predicate;
-/*     */ import org.apache.commons.collections.functors.FalsePredicate;
+/*     */ import org.apache.commons.collections4.Predicate;
+/*     */ import org.apache.commons.collections4.functors.FalsePredicate;
 /*     */ 
 /*     */ public class FormGrid extends FormScrollPanel
 /*     */   implements RefreshableComponent

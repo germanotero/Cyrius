@@ -10,10 +10,11 @@
  import com.framework.models.FormModel;
  import com.framework.print.builder.PrintableElementsBuilder;
  import com.framework.utils.ClassUtils;
- import com.framework.utils.CollectionUtils;
- import org.apache.commons.collections.Closure;
- import org.apache.commons.collections.Predicate;
- import org.apache.commons.collections.functors.FalsePredicate;
+ import com.framework.utils.ExtraCollectionUtils;
+ import org.apache.commons.collections4.Closure;
+import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.collections4.Predicate;
+ import org.apache.commons.collections4.functors.FalsePredicate;
  
  public abstract class AbstractGroup extends AbstractPanel
    implements FormModelContainer

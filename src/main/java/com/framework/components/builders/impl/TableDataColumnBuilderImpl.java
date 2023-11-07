@@ -6,7 +6,7 @@
 /*     */ import com.framework.models.FormGridDateDataColumn;
 /*     */ import com.framework.models.FormGridModel;
 /*     */ import com.framework.utils.StringProvider;
-/*     */ import org.apache.commons.collections.Transformer;
+/*     */ import org.apache.commons.collections4.Transformer;
 /*     */ 
 /*     */ public class TableDataColumnBuilderImpl
 /*     */   implements TableDataColumnBuilder, TableColumnBuilderImpl

@@ -6,9 +6,9 @@
 /*    */ import com.cyrius.searchers.BuscadorObraSocial;
 /*    */ import com.framework.models.DelegatingModel;
 /*    */ import java.util.Collection;
-/*    */ import org.apache.commons.collections.Closure;
-/*    */ import org.apache.commons.collections.CollectionUtils;
-/*    */ import org.apache.commons.collections.Predicate;
+/*    */ import org.apache.commons.collections4.Closure;
+/*    */ import org.apache.commons.collections4.CollectionUtils;
+/*    */ import org.apache.commons.collections4.Predicate;
 /*    */ 
 /*    */ public class PracticaNoNomencladaModel
 /*    */   implements DelegatingModel

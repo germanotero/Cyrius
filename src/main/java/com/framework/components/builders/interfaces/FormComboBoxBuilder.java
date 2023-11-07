@@ -2,7 +2,7 @@ package com.framework.components.builders.interfaces;
 
 import com.framework.components.Combo;
 import java.awt.event.ItemListener;
-import org.apache.commons.collections.Transformer;
+import org.apache.commons.collections4.Transformer;
 
 public abstract interface FormComboBoxBuilder extends FormComponentBuilder
 {

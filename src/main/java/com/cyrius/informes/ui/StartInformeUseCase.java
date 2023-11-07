@@ -19,7 +19,7 @@ import com.framework.models.FormModel;
 import com.framework.utils.AbstractPredicate;
 import java.awt.Dimension;
 import java.util.Date;
-import org.apache.commons.collections.Transformer;
+import org.apache.commons.collections4.Transformer;
 
 public class StartInformeUseCase extends AbstractUseCaseFactory {
 	public void registerFactorys(UseCaseBuilder builder) {

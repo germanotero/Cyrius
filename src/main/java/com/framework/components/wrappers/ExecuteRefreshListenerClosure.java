@@ -1,6 +1,6 @@
 /*    */ package com.framework.components.wrappers;
 /*    */ 
-/*    */ import org.apache.commons.collections.Closure;
+/*    */ import org.apache.commons.collections4.Closure;
 /*    */ 
 /*    */ final class ExecuteRefreshListenerClosure
 /*    */   implements Closure

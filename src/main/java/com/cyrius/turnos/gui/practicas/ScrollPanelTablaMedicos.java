@@ -18,7 +18,7 @@
 /*     */ import javax.swing.table.DefaultTableModel;
 /*     */ import javax.swing.table.TableColumn;
 /*     */ import javax.swing.table.TableColumnModel;
-/*     */ import org.apache.commons.collections.Predicate;
+/*     */ import org.apache.commons.collections4.Predicate;
 /*     */ 
 /*     */ public class ScrollPanelTablaMedicos extends FormScrollPanel
 /*     */ {

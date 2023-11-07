@@ -3,8 +3,8 @@
 /*    */ import com.framework.components.FormComponent;
 /*    */ import com.framework.components.RefreshableComponent;
 /*    */ import com.framework.components.builders.interfaces.FormComponentBuilder;
-/*    */ import org.apache.commons.collections.Predicate;
-/*    */ import org.apache.commons.collections.functors.FalsePredicate;
+/*    */ import org.apache.commons.collections4.Predicate;
+/*    */ import org.apache.commons.collections4.functors.FalsePredicate;
 /*    */ 
 /*    */ public class DefaultFormComponentBuilder
 /*    */   implements FormComponentBuilder

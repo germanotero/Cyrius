@@ -4,7 +4,7 @@ import com.framework.actions.AbstractFormAction;
 import com.framework.components.builders.interfaces.FormComboBoxBuilder;
 import com.framework.components.builders.interfaces.TableActionColumnBuilder;
 import com.framework.components.builders.interfaces.TableColumnBuilder;
-import org.apache.commons.collections.Transformer;
+import org.apache.commons.collections4.Transformer;
 
 public abstract interface FormGridBuilder
 {

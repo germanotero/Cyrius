@@ -11,8 +11,8 @@
 /*     */ import javax.swing.JFormattedTextField;
 /*     */ import javax.swing.JFormattedTextField.AbstractFormatter;
 /*     */ import javax.swing.JLabel;
-/*     */ import org.apache.commons.collections.Predicate;
-/*     */ import org.apache.commons.collections.functors.FalsePredicate;
+/*     */ import org.apache.commons.collections4.Predicate;
+/*     */ import org.apache.commons.collections4.functors.FalsePredicate;
 /*     */ 
 /*     */ public abstract class AbstractFormInput extends JFormattedTextField
 /*     */   implements FormInput
