@@ -5,8 +5,8 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.util.Collection;
 
-import org.apache.commons.collections.Predicate;
-import org.apache.commons.collections.Transformer;
+import org.apache.commons.collections4.Predicate;
+import org.apache.commons.collections4.Transformer;
 
 import com.framework.components.Combo;
 import com.framework.components.DefaultComboBox;

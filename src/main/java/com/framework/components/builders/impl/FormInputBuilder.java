@@ -10,8 +10,8 @@
 /*     */ import com.framework.utils.StringProvider;
 /*     */ import com.framework.utils.StringUtils;
 /*     */ import java.awt.Dimension;
-/*     */ import org.apache.commons.collections.Predicate;
-/*     */ import org.apache.commons.collections.functors.FalsePredicate;
+/*     */ import org.apache.commons.collections4.Predicate;
+/*     */ import org.apache.commons.collections4.functors.FalsePredicate;
 /*     */ 
 /*     */ public class FormInputBuilder
 /*     */   implements FormComponentBuilder, FormFieldBuilder

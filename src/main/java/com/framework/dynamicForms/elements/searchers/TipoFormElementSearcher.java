@@ -11,9 +11,9 @@
 /*     */ import com.framework.components.builders.impl.GroupBuilderImpl;
 /*     */ import com.framework.dynamicForms.entities.TipoFormElement;
 /*     */ import com.framework.utils.CollectionFactory;
-/*     */ import com.framework.utils.CollectionUtils;
+/*     */ import com.framework.utils.ExtraCollectionUtils;
 /*     */ import java.util.Collection;
-/*     */ import org.apache.commons.collections.Predicate;
+/*     */ import org.apache.commons.collections4.Predicate;
 /*     */ 
 /*     */ public class TipoFormElementSearcher extends WellKnownInstancesSearcher<TipoFormElement>
 /*     */ {
@@ -115,7 +115,7 @@
 /*     */   }
 /*     */ 
 /*     */   public Collection findSimpleTypes() {
-/* 144 */     return CollectionUtils.select(findAll(), new Predicate() {
+/* 144 */     return ExtraCollectionUtils.select(findAll(), new Predicate() {
 /*     */       public boolean evaluate(Object arg0) {
 /* 146 */         TipoFormElement tipo = (TipoFormElement)arg0;
 /* 147 */         return (!tipo.equals(TipoFormElementSearcher.getForm())) && (!tipo.equals(TipoFormElementSearcher.getGrupo())) && (!tipo.equals(TipoFormElementSearcher.getComboElement()));

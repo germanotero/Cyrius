@@ -10,8 +10,8 @@
 /*     */ import javax.swing.JComponent;
 /*     */ import javax.swing.JEditorPane;
 /*     */ import javax.swing.JLabel;
-/*     */ import org.apache.commons.collections.Predicate;
-/*     */ import org.apache.commons.collections.functors.FalsePredicate;
+/*     */ import org.apache.commons.collections4.Predicate;
+/*     */ import org.apache.commons.collections4.functors.FalsePredicate;
 /*     */ 
 /*     */ public class TextArea extends JEditorPane
 /*     */   implements FormInput

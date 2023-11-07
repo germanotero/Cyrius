@@ -3,8 +3,8 @@ package com.framework.integration;
 import java.io.File;
 import java.util.Iterator;
 
-import org.apache.commons.collections.Predicate;
-import org.apache.commons.collections.functors.TruePredicate;
+import org.apache.commons.collections4.Predicate;
+import org.apache.commons.collections4.functors.TruePredicate;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 

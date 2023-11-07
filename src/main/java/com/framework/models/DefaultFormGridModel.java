@@ -6,7 +6,7 @@
 /*     */ import com.framework.entities.FormModelUtils;
 /*     */ import com.framework.persistence.PresentationException;
 /*     */ import com.framework.utils.CollectionFactory;
-/*     */ import com.framework.utils.CollectionUtils;
+/*     */ import com.framework.utils.ExtraCollectionUtils;
 /*     */ import java.util.Collection;
 /*     */ import java.util.Iterator;
 /*     */ import java.util.List;
@@ -14,8 +14,10 @@
 /*     */ import javax.swing.event.TableModelEvent;
 /*     */ import javax.swing.event.TableModelListener;
 /*     */ import javax.swing.table.TableModel;
-/*     */ import org.apache.commons.collections.Predicate;
-/*     */ import org.apache.commons.collections.Transformer;
+
+import org.apache.commons.collections4.CollectionUtils;
+/*     */ import org.apache.commons.collections4.Predicate;
+/*     */ import org.apache.commons.collections4.Transformer;
 /*     */ 
 /*     */ public class DefaultFormGridModel
 /*     */   implements TableModel, FormGridModel

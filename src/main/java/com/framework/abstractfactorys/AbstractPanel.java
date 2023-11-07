@@ -19,7 +19,7 @@
 /*     */ import com.framework.print.builder.PrintableElementsBuilder;
 /*     */ import com.framework.utils.ArrayIterator;
 /*     */ import com.framework.utils.CollectionFactory;
-/*     */ import com.framework.utils.CollectionUtils;
+/*     */ import com.framework.utils.ExtraCollectionUtils;
 /*     */ import com.framework.utils.StringProvider;
 /*     */ import com.framework.utils.StringUtils;
 /*     */ import java.awt.BorderLayout;
@@ -32,7 +32,7 @@
 /*     */ import javax.swing.JComponent;
 /*     */ import javax.swing.JPanel;
 /*     */ import javax.swing.JScrollPane;
-/*     */ import org.apache.commons.collections.Predicate;
+/*     */ import org.apache.commons.collections4.Predicate;
 /*     */ import org.apache.commons.logging.Log;
 /*     */ import org.apache.commons.logging.LogFactory;
 /*     */ 
@@ -105,12 +105,12 @@
 /*     */   public Collection getAllComponents()
 /*     */   {
 /* 135 */     Collection components = new ArrayList();
-/* 136 */     components.addAll(CollectionUtils.arrayToCollection(
+/* 136 */     components.addAll(ExtraCollectionUtils.arrayToCollection(
 /* 137 */       this.elementsPanel.getComponents()));
-/* 138 */     components.addAll(CollectionUtils.arrayToCollection(
+/* 138 */     components.addAll(ExtraCollectionUtils.arrayToCollection(
 /* 139 */       this.actionsPanel.getComponents()));
 /*     */ 
-/* 145 */     return CollectionUtils.select(components, new Predicate()
+/* 145 */     return ExtraCollectionUtils.select(components, new Predicate()
 /*     */     {
 /*     */       public boolean evaluate(Object arg0) {
 /* 148 */         return arg0 instanceof FormComponent;
@@ -120,7 +120,7 @@
 /*     */ 
 /*     */   protected Collection getAllModelableComponents()
 /*     */   {
-/* 156 */     return CollectionUtils.select(getAllComponents(), new Predicate() {
+/* 156 */     return ExtraCollectionUtils.select(getAllComponents(), new Predicate() {
 /*     */       public boolean evaluate(Object model) {
 /* 158 */         return model instanceof FormContainer;
 /*     */       } } );
@@ -245,12 +245,12 @@
 /*     */ 
 /*     */   public void direct(PrintableElementsBuilder print) {
 /* 309 */     if (isEnabled())
-/* 310 */       CollectionUtils.forAllDo(dataComponentsIterator(), 
+/* 310 */       ExtraCollectionUtils.forAllDo(dataComponentsIterator(), 
 /* 311 */         new DirectFormDataComponentClosure(print));
 /*     */   }
 /*     */ 
 /*     */   public boolean isCompleted() {
-/* 315 */     return CollectionUtils.and(getAllElements(this), new Predicate()
+/* 315 */     return ExtraCollectionUtils.and(getAllElements(this), new Predicate()
 /*     */     {
 /*     */       public boolean evaluate(Object arg0) {
 /* 318 */         FormValueSelectionContainer element = (FormValueSelectionContainer)arg0;

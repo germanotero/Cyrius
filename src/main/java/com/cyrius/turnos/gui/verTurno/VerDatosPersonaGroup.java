@@ -6,7 +6,7 @@
 /*    */ import com.framework.components.builders.impl.FormFieldBuilder;
 /*    */ import com.framework.components.builders.interfaces.FormComboBoxBuilder;
 /*    */ import com.framework.components.builders.interfaces.FormElementsBuilder;
-/*    */ import org.apache.commons.collections.functors.TruePredicate;
+/*    */ import org.apache.commons.collections4.functors.TruePredicate;
 /*    */ 
 /*    */ public class VerDatosPersonaGroup extends AbstractGroup
 /*    */ {

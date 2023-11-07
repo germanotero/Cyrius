@@ -3,7 +3,7 @@
 /*    */ import com.framework.components.listeners.ModelTargetListener;
 /*    */ import com.framework.components.listeners.NullModelTargetListener;
 /*    */ import javax.swing.JTable;
-/*    */ import org.apache.commons.collections.Predicate;
+/*    */ import org.apache.commons.collections4.Predicate;
 /*    */ 
 /*    */ public abstract class AbstractTableFormComponent extends JTable
 /*    */   implements FormValueSelectionContainer

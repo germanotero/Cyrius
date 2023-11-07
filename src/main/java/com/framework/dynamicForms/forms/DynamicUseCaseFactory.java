@@ -4,7 +4,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 
-import org.apache.commons.collections.Predicate;
+import org.apache.commons.collections4.Predicate;
 
 import com.cyrius.informes.ui.uc.SendByEmailUseCaseFactory;
 import com.framework.abstractfactorys.AbstractPanel;

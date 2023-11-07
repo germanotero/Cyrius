@@ -5,7 +5,7 @@ import com.cyrius.entities.Turno;
 import com.cyrius.searchers.BuscadorPersona;
 import com.cyrius.searchers.BuscadorTurnos;
 import com.google.api.client.util.Lists;
-import org.apache.commons.lang.time.DateFormatUtils;
+import org.apache.commons.lang3.time.DateFormatUtils;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;

@@ -1,6 +1,6 @@
 package com.framework.components;
 
-import org.apache.commons.collections.Predicate;
+import org.apache.commons.collections4.Predicate;
 
 public abstract interface FormComponent extends Component
 {

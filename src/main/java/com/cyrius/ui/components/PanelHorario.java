@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.border.SoftBevelBorder;
 
-import org.apache.commons.collections.Predicate;
+import org.apache.commons.collections4.Predicate;
 
 import com.cyrius.entities.HorarioSemanal;
 import com.framework.components.FormComponent;

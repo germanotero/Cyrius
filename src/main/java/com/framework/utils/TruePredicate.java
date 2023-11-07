@@ -1,9 +1,9 @@
 /*    */ package com.framework.utils;
 /*    */ 
-/*    */ import org.apache.commons.collections.Predicate;
+/*    */ import org.apache.commons.collections4.Predicate;
 /*    */ 
 /*    */ public class TruePredicate
-/*    */   implements Predicate
+/*    */   implements Predicate<Object>
 /*    */ {
 /*  6 */   public static final TruePredicate INSTANCE = new TruePredicate();
 /*    */ 

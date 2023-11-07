@@ -4,7 +4,7 @@
 /*    */ import com.framework.components.RefreshableComponent;
 /*    */ import com.framework.components.builders.interfaces.FormComponentBuilder;
 /*    */ import com.framework.components.builders.interfaces.TreeBuilder;
-/*    */ import org.apache.commons.collections.Predicate;
+/*    */ import org.apache.commons.collections4.Predicate;
 /*    */ 
 /*    */ public class TreeBuilderImpl
 /*    */   implements FormComponentBuilder, TreeBuilder

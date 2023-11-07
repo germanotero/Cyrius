@@ -4,11 +4,12 @@ import java.math.BigInteger;
 
 import javax.swing.JOptionPane;
 
-import org.apache.commons.collections.Transformer;
-import org.apache.commons.collections.functors.ConstantTransformer;
+import org.apache.commons.collections4.Transformer;
+import org.apache.commons.collections4.functors.ConstantTransformer;
 
 import com.framework.actions.AbstractFormAction;
 import com.framework.actions.SimpleModelTarget;
+import com.framework.components.FormComponent;
 import com.framework.dynamicForms.entities.DynamicForm;
 import com.framework.dynamicForms.forms.DynamicUseCaseBuilder;
 import com.framework.dynamicForms.forms.DynamicUseCaseFactory;

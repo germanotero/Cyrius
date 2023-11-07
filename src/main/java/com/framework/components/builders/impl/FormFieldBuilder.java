@@ -1,7 +1,7 @@
 package com.framework.components.builders.impl;
 
 import com.framework.components.builders.interfaces.FormComponentBuilder;
-import org.apache.commons.collections.Predicate;
+import org.apache.commons.collections4.Predicate;
 
 public abstract interface FormFieldBuilder
 {

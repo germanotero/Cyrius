@@ -6,9 +6,9 @@
 /*    */ import com.framework.dynamicForms.entities.TipoFormElement;
 /*    */ import com.framework.persistence.CriteriaBuilder;
 /*    */ import com.framework.persistence.PersistenceService;
-/*    */ import com.framework.utils.CollectionUtils;
+/*    */ import com.framework.utils.ExtraCollectionUtils;
 /*    */ import java.util.Collection;
-/*    */ import org.apache.commons.collections.Predicate;
+/*    */ import org.apache.commons.collections4.Predicate;
 /*    */ 
 /*    */ public class EstudiosSearcher extends DynamicFormSearcher
 /*    */ {
@@ -26,7 +26,7 @@
 /*    */   {
 /* 40 */     CriteriaBuilder builder = PersistenceService.getInstance().criteriaBuilder(DynamicForm.class);
 /* 41 */     builder.addSql(" THIS_.ID NOT IN (SELECT ID_ESTUDIO FROM PRACTICA_ESTUDIOS) ");
-/* 42 */     Collection select = CollectionUtils.select((Collection)(Collection)builder.build(), new Predicate()
+/* 42 */     Collection select = ExtraCollectionUtils.select((Collection)(Collection)builder.build(), new Predicate()
 /*    */     {
 /*    */       public boolean evaluate(Object arg0) {
 /* 45 */         DynamicForm form = (DynamicForm)arg0;

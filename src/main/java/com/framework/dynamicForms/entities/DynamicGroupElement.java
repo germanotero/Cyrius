@@ -7,10 +7,12 @@
 /*     */ import com.framework.components.builders.interfaces.GroupBuilder;
 /*     */ import com.framework.dynamicForms.elements.searchers.TipoFormElementSearcher;
 /*     */ import com.framework.entities.DynamicFormModel;
-/*     */ import com.framework.utils.CollectionUtils;
+/*     */ import com.framework.utils.ExtraCollectionUtils;
 /*     */ import java.util.ArrayList;
 /*     */ import java.util.Collection;
-/*     */ import org.apache.commons.collections.Transformer;
+
+import org.apache.commons.collections4.CollectionUtils;
+/*     */ import org.apache.commons.collections4.Transformer;
 /*     */ 
 /*     */ public class DynamicGroupElement extends DynamicForm
 /*     */ {
@@ -63,9 +65,9 @@
 /*     */   }
 /*     */ 
 /*     */   private Collection getAllBuilders() {
-/*  73 */     Collection groups = CollectionUtils.transformedCollection(
+/*  73 */     Collection groups = ExtraCollectionUtils.transformedCollection(
 /*  74 */       getGroupElements(), new RelacionToGroupTransformer());
-/*  75 */     Collection builders = CollectionUtils.union(getSimpleElements(), 
+/*  75 */     Collection builders = ExtraCollectionUtils.union(getSimpleElements(), 
 /*  76 */       groups);
 /*  77 */     Collection collect = CollectionUtils.collect(builders, 
 /*  78 */       new DynamicFormElementToElementBuilderTransformer());

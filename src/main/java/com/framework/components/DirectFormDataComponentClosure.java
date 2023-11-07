@@ -2,7 +2,7 @@
 /*    */ 
 /*    */ import com.framework.actions.FormDataComponent;
 /*    */ import com.framework.print.builder.PrintableElementsBuilder;
-/*    */ import org.apache.commons.collections.Closure;
+/*    */ import org.apache.commons.collections4.Closure;
 /*    */ 
 /*    */ public class DirectFormDataComponentClosure
 /*    */   implements Closure

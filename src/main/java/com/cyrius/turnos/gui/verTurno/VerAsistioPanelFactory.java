@@ -7,7 +7,7 @@
 /*    */ import com.framework.components.builders.interfaces.FormActionBuilder;
 /*    */ import com.framework.components.builders.interfaces.FormComboBoxBuilder;
 /*    */ import com.framework.components.builders.interfaces.FormElementsBuilder;
-/*    */ import org.apache.commons.collections.functors.TruePredicate;
+/*    */ import org.apache.commons.collections4.functors.TruePredicate;
 /*    */ 
 /*    */ public class VerAsistioPanelFactory extends AbstractPanel
 /*    */ {

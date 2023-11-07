@@ -2,7 +2,7 @@
 /*     */ 
 /*     */ import com.framework.components.listeners.ModelTargetListener;
 /*     */ import javax.swing.JScrollPane;
-/*     */ import org.apache.commons.collections.Predicate;
+/*     */ import org.apache.commons.collections4.Predicate;
 /*     */ 
 /*     */ public abstract class FormScrollPanel extends JScrollPane
 /*     */   implements FormValueSelectionContainer

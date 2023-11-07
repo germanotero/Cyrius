@@ -1,7 +1,7 @@
 /*    */ package com.framework.utils;
 /*    */ 
 /*    */ import java.util.Iterator;
-/*    */ import org.apache.commons.collections.Predicate;
+/*    */ import org.apache.commons.collections4.Predicate;
 /*    */ 
 /*    */ public class ArrayIterator<E>
 /*    */   implements Iterator<E>
@@ -15,7 +15,7 @@
 /* 20 */     this(array, TruePredicate.INSTANCE);
 /*    */   }
 /*    */ 
-/*    */   public ArrayIterator(E[] array, Predicate predicate) {
+/*    */   public ArrayIterator(E[] array, org.apache.commons.collections4.Predicate predicate) {
 /* 24 */     this.predicate = predicate;
 /* 25 */     this.array = array;
 /*    */   }

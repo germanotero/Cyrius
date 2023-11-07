@@ -1,7 +1,7 @@
 /*    */ package com.framework.abstractfactorys;
 /*    */ 
 /*    */ import com.framework.print.builder.PrintableElementsBuilder;
-/*    */ import org.apache.commons.collections.Closure;
+/*    */ import org.apache.commons.collections4.Closure;
 /*    */ 
 /*    */ public class DirectGroupsClosure
 /*    */   implements Closure

@@ -8,7 +8,7 @@ import java.awt.event.ItemListener;
 import java.awt.event.MouseListener;
 import java.util.Collection;
 import javax.swing.JComponent;
-import org.apache.commons.collections.Transformer;
+import org.apache.commons.collections4.Transformer;
 
 public abstract interface Combo extends FormCombo, FormValueSelectionContainer
 {

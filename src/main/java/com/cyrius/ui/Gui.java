@@ -21,6 +21,7 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.border.BevelBorder;
 
+
 import org.apache.log4j.xml.DOMConfigurator;
 
 import com.cyrius.informes.ui.uc.MainInformesUseCase;

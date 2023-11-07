@@ -5,7 +5,7 @@
 /*    */ import com.framework.components.builders.interfaces.FormElementsBuilder;
 /*    */ import com.framework.dynamicForms.entities.DynamicGroupElement;
 /*    */ import com.framework.models.FormModel;
-/*    */ import org.apache.commons.collections.Predicate;
+/*    */ import org.apache.commons.collections4.Predicate;
 /*    */ 
 /*    */ public class DynamicGroupPanelFactory extends DynamicPanelsPanelFactory
 /*    */ {
