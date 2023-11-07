@@ -6,7 +6,7 @@
     <name>cyrius-core</name>
     <url>http://maven.apache.org</url>
     <!--
-        mvn install:install-file -Dfile=lib/myJar.jar -DgroupId=com.cyrius -DartifactId=datepicker -Dversion=1.0 -Dpackaging=jar
+        mvn install:install-file -Dfile=lib/datepicker.jar -DgroupId=com.cyrius -DartifactId=datepicker -Dversion=1.0 -Dpackaging=jar
         mvn install:install-file -Dfile=lib/xduke.jar -DgroupId=com.cyrius -DartifactId=xduke -Dversion=1.0 -Dpackaging=jar
         mvn install:install-file -Dfile=lib/elegantj.jar -DgroupId=com.cyrius -DartifactId=elegantj -Dversion=1.0 -Dpackaging=jar
 
